@@ -13,16 +13,16 @@ from datetime import *
 import pandas as pd
 
 from satoshi_cache.source.exchanges.binance.binance_public_data.enums import (
-    START_DATE,
-    END_DATE,
     DAILY_INTERVALS,
+    END_DATE,
     PERIOD_START_DATE,
+    START_DATE,
 )
 from satoshi_cache.source.exchanges.binance.binance_public_data.utility import (
+    convert_to_date_object,
     download_file,
     get_all_symbols,
     get_parser,
-    convert_to_date_object,
     get_path,
     raise_arg_error,
 )

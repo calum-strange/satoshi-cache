@@ -1,11 +1,15 @@
-import os, sys, re, shutil
 import json
-from pathlib import Path
-from datetime import *
+import os
+import re
+import shutil
+import sys
 import urllib.request
-from argparse import ArgumentParser, RawTextHelpFormatter, ArgumentTypeError
-from satoshi_cache.source.exchanges.binance.binance_public_data.enums import *
+from argparse import ArgumentParser, ArgumentTypeError, RawTextHelpFormatter
+from datetime import *
+from pathlib import Path
+
 from satoshi_cache.config import DOWLOAD_LOCATION
+from satoshi_cache.source.exchanges.binance.binance_public_data.enums import *
 
 
 def get_destination_dir(file_url, folder=None):

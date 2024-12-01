@@ -1,3 +1,5 @@
+from satoshi_cache.config import BinanceFileType, BinanceProductType
+
 agg_trade_columns = [
     "tradeId",
     "price",
@@ -82,3 +84,24 @@ coin_m_trade_columns = [
     "timestamp",
     "maker_bought",
 ]
+
+
+def get_binance_file_columns(
+    trading_type: BinanceProductType, market_data_type: BinanceFileType
+):
+    if market_data_type == "aggTrades":
+        return agg_trade_columns
+    elif market_data_type == "trades":
+        if trading_type == "spot":
+            return trade_columns
+        elif trading_type == "um":
+            return usd_m_trade_columns
+        elif trading_type == "cm":
+            return coin_m_trade_columns
+    elif market_data_type == "klines":
+        if trading_type == "spot":
+            return klines_columns
+        elif trading_type == "um":
+            return usd_m_klines_columns
+        elif trading_type == "cm":
+            return coin_m_klines_columns
