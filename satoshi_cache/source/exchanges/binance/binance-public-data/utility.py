@@ -5,9 +5,11 @@ from datetime import *
 import urllib.request
 from argparse import ArgumentParser, RawTextHelpFormatter, ArgumentTypeError
 from enums import *
+from satoshi_cache.config import DOWLOAD_LOCATION
+
 
 def get_destination_dir(file_url, folder=None):
-  store_directory = os.environ.get('STORE_DIRECTORY')
+  store_directory = DOWLOAD_LOCATION
   if folder:
     store_directory = folder
   if not store_directory:
