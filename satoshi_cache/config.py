@@ -3,6 +3,7 @@ from typing import Literal, get_args
 
 
 CACHE_LOCATION = Path("./satoshi_cache")  # your cache location
+DOWLOAD_LOCATION = Path("./satoshi_cache/download")  # your download location
 
 ExchangeType = Literal["binance"]
 available_exchanges = get_args(ExchangeType)
